@@ -4,8 +4,8 @@ import winston from "winston";
 interface IafUploadModule {
     logger: winston.Logger;
     onFileAdd(filePath: string, readStream: Readable): any;
-    progressDelegate(callback: Function);
-    fileUploadedDelegate(callback: Function);
+    progressDelegate: Function;
+    fileUploadedDelegate: Function;
 }
 
 interface IafFileWatchModule {
