@@ -3,6 +3,7 @@ import winston from "winston";
 
 interface IafUploadModule {
     logger: winston.Logger;
+    playlistName: string;
     onFileAdd(filePath: string, readStream: Readable): any;
     progressDelegate: Function;
     fileUploadedDelegate: Function;
