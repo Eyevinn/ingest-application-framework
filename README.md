@@ -36,6 +36,8 @@ A function that should be injected when constructing an UploadModule instance. T
 #### `fileUploadedDelegate: Function`
 A callback function that should be injected when instantiating an upload module. The callback is run when the UploadModule has finished uploading the file to the associated transcoding service.
 
+Apart from implementing the public methods, we stongly encourage implementing all attributes as well, as we believe that they are necessary for well-functioning implementation of the IAF.
+
 ### `IafFileWatchModule`
 This interface is for IAF modules that watch an ingest destination for file additions. This could in theory be a local folder, a mounted NAS, or some cloud storage service (depending on the available SDK capabilities).
 It has one public method: 
