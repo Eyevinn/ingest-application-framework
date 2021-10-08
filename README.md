@@ -8,6 +8,7 @@ The Figure below shows the intended way to use IAF plugins with an ingest applic
 
 - [@eyevinn/iaf-plugin-aws](https://www.npmjs.com/package/@eyevinn/iaf-plugin-aws) for transcoding using AWS MediaConvert.
 - [@eyevinn/iaf-plugin-aws-mediapackage](https://www.npmjs.com/package/@eyevinn/iaf-plugin-aws-mediapackage) for just-in-time video packaging of files using AWS MediaPackage.
+- [@eyevinn/iaf-plugin-encore-local](https://www.npmjs.com/package/@eyevinn/iaf-plugin-encore-local) for transcoding using SVT Encore video transcoding tool.
 
 ## Building your own plugin.
 
