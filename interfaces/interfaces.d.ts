@@ -5,8 +5,8 @@ interface IafUploadModule {
     logger: winston.Logger;
     playlistName: string;
     onFileAdd(filePath: string, readStream: Readable, contentType?: string): any;
-    progressDelegate: Function;
-    fileUploadedDelegate: Function;
+    progressDelegate: () => any;
+    fileUploadedDelegate: () => any;
 }
 
 interface IafFileWatchModule {
