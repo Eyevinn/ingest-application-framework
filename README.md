@@ -35,11 +35,11 @@ It is meant to run when a file is added to the ingest destination.
 
 `readStream`: a `Readable`stream of the file to upload. Files need to be provided as streams in order keep memory consumption at a reasonable level.
 
-#### `progressDelegate: () => any`
+#### `progressDelegate: (result: any) => any`
 
 A function that should be injected when constructing an UploadModule instance. This callback should be called whenever the upload progresses. Possible uses are logging and error handling.
 
-#### `fileUploadedDelegate: () => any`
+#### `fileUploadedDelegate: (result: any) => any`
 
 A callback function that should be injected when instantiating an upload module. The callback is run when the UploadModule has finished uploading the file to the associated transcoding service.
 
@@ -48,7 +48,7 @@ Apart from implementing the public methods, we strongly encourage implementing a
 ### `IafFileWatchModule`
 
 This interface is for IAF modules that watch an ingest destination for file additions. This could in theory be a local folder, a mounted NAS, or some cloud storage service (depending on the available SDK capabilities).
-It has one public method: 
+It has one public method:
 
 #### `onAdd(callback: (filePath: string, readStream: Readable, contentType?: string))`
 
