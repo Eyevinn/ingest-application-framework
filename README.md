@@ -39,7 +39,7 @@ It is meant to run when a file is added to the ingest destination.
 
 A function that should be injected when constructing an UploadModule instance. This callback should be called whenever the upload progresses. Possible uses are logging and error handling.
 
-#### `fileUploadedDelegate: (result: any) => any`
+#### `fileUploadedDelegate: (result: any, error?: any) => any`
 
 A callback function that should be injected when instantiating an upload module. The callback is run when the UploadModule has finished uploading the file to the associated transcoding service.
 

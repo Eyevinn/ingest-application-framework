@@ -1,16 +1,22 @@
 import { Readable } from "stream";
-import winston from "winston";
+
+export interface Logger {
+    verbose: (message: string) => void;
+    info: (message: string) => void;
+    warn: (message: string) => void;
+    error: (message: string) => void;
+}
 
 interface IafUploadModule {
-    logger: winston.Logger;
+    logger: Logger;
     playlistName: string;
     onFileAdd(filePath: string, readStream: Readable, contentType?: string): any;
     progressDelegate: (result: any) => any;
-    fileUploadedDelegate: (result: any) => any;
+    fileUploadedDelegate: (result: any, error?: any) => any;
 }
 
 interface IafFileWatchModule {
     fileInput: string;
-    logger: winston.Logger;
-    onAdd(callback: (filePath: string, readStream: Readable, contentType?: string) => any);
+    logger: Logger;
+    onAdd(callback: (filePath: string, readStream: Readable, contentType?: string) => any): any;
 }
